@@ -1,0 +1,16 @@
+.headingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    font-size: 2rem;
+    color: rgb(255, 255, 255); 
+}
+
+.headingContainer > h1 {
+    font-weight: 400;
+}
+
+
+// background-color: rgba(252, 217, 164, 0.7); 
