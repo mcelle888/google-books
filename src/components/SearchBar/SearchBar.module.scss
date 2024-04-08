@@ -10,4 +10,25 @@
 form {
     display: flex;
     gap: 2rem;
+
+}
+
+form > input {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    outline: auto;
+    outline-color: rgb(175, 155, 99);
+}
+
+
+button {
+    background-color:  rgb(175, 155, 99);
+    padding: 0.5rem;
+    outline: auto;
+    outline-color: rgb(175, 155, 99);
+    color: black;
+}
+
+button:hover {
+    filter: drop-shadow(0 0 0.5rem rgb(175, 155, 99))
 }

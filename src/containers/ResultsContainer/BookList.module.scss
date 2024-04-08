@@ -1,0 +1,6 @@
+.resultsBox {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 3rem;
+    // background-color: rgba(22, 22, 22, 0.8); 
+}
