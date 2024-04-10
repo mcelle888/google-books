@@ -16,7 +16,7 @@ const Card = ( { book }) => {
         <p className={styles.bookTitle}>Title: {book.title} </p>
         <p>Authors: {authors}</p>
         <p>Published: {book.publishedDate}</p>
-        <p>Description: {book.description}</p>
+        <p>Description:  {book.description ? book.description.slice(0, 100) + "..." : "n/a"}</p>
         <button>More Info</button>
       </div>
 
