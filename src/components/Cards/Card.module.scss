@@ -25,6 +25,10 @@
     font-size: 1.4rem;
 }
 
-.modal {
-    background-color: red; 
+.modalContainer {
+    position: fixed;
+    top: 15%;
+    display: flex;
+    justify-self: center;
+    z-index: 1;
 }

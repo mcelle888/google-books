@@ -1,0 +1,10 @@
+.navContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 4rem;
+    width: 90vw;
+}
+
+.navContainer > button {
+    background-color: rgb(175, 155, 99);
+}

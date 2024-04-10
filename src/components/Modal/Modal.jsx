@@ -1,13 +1,13 @@
 import React from 'react'
 import styles from './Modal.module.scss'
 
-const Modal = ({ close, content }) => {
+const Modal = ({ toggle, content }) => {
   
   return (
     <div className={styles.modalContainer}>
       <div>
         <div >{content}</div>
-        <button onClick={close}>
+        <button onClick={toggle}>
           Close
         </button>
       </div>

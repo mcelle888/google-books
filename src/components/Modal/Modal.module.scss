@@ -1,14 +1,13 @@
 .modalContainer {
-    height: 15rem;
+    height: 60vh;;
     width: 30rem;
-    background-color: rgb(88, 35, 35);
-    position: absolute;
+    background-color: rgba(88, 35, 35, 1);
+    // background-color: rgb(48, 43, 43);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(175, 155, 99);
+    filter: drop-shadow(0 0 0.4rem rgb(175, 155, 99))
 }
 
-
-.modalContainer > button {
-
-}

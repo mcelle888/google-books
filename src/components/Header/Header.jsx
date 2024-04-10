@@ -8,7 +8,7 @@ const Header = ({onSearch}) => {
     <div className={styles.headingContainer}> 
         <h1>Google Books API Search Engine</h1>
         <p>Search for your favourite books or explore something new!🕯️ </p>
-        <SearchBar buttonText="Search" placeholder="Search" onSearch={onSearch}  />
+        <SearchBar buttonText="Search" placeholder="Search" onSearch={onSearch} />
     </div>
   )
 }
