@@ -25,3 +25,29 @@ export const getBooksfromSearch = async (searchTerm, startIndex = 0, maxResults 
       throw error
     }
   }
+
+
+
+  export const getBookById = async (bookId) => {
+    try {
+      const response = await fetch(
+        `https://www.googleapis.com/books/v1/volumes/${bookId}`
+      );
+  
+      if (!response.ok) {
+        throw new Error('Failed to fetch book details');
+      }
+  
+      const data = await response.json();
+  
+      if (!data || !data.volumeInfo) {
+        throw new Error('Book details not found');
+      }
+  
+      return data;  
+    } catch (error) {
+      console.error('Error fetching book details:', error);
+      throw error;
+    }
+  };
+  

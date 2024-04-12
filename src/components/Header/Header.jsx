@@ -7,7 +7,7 @@ const Header = () => {
   const { handleSearch } = useSearchContext()
 
   return (
-    <div className={styles.searchContainer}>
+    <div className={styles.headingContainer}>
        <h1>Google Books API Search Engine</h1>
         <p>Search for your favourite books or explore something new!🕯️ </p>
       <SearchBar buttonText="Search" placeholder="Search" onSearch={handleSearch} />

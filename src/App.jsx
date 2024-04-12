@@ -12,7 +12,6 @@ function App() {
       <section>
         <Header />
         <BookList />
-        <Nav />
       </section>
     </SearchProvider>
   );
