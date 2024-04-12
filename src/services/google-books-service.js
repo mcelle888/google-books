@@ -13,9 +13,9 @@ export const getBooksfromSearch = async (searchTerm, startIndex = 0, maxResults 
       }
   
       const data = await response.json()
-      const results = data.items || []
+      const results = data || []
   
-      if (results.length === 0) {
+      if (results.items.length === 0) {
         throw new Error(`No books found for "${searchTerm}"`)
       }
   

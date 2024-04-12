@@ -10,15 +10,25 @@ const BookList = () => {
   const [books, setBooks] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
   const [showNav, setShowNav] = useState(false)  
+  const [error, setError] = useState(null)
+  const [totalResults, setTotalResults] = useState(0)
 
   const fetchBooks = async (searchTerm, page) => {
     try {
       const startIndex = (page - 1) * 16
       const newBooks = await getBooksfromSearch(searchTerm, startIndex, 16)
-      setBooks(newBooks)
+      if (page === 1 ) {
+        setTotalResults(newBooks.totalItems)
+      }
+      setBooks(newBooks.items)
       setShowNav(true)  
+      window.scrollTo(0, 0)
+
     } catch (error) {
-      console.error("Error fetching books:", error)
+      setBooks([])
+      setShowNav(false)
+      setError(`No results found for '${searchTerm}'`)
+      setTotalResults(0)
     }
   }
 
@@ -46,22 +56,35 @@ const BookList = () => {
 
   useEffect(() => {
     if (searchTerm) {
-      fetchBooks(searchTerm, currentPage)
+      setCurrentPage(1)
+      fetchBooks(searchTerm, 1)
     } else {
       setShowNav(false)
+      setError(null)
+      setTotalResults(0)
     }
-  }, [searchTerm, currentPage])
+    return () => {
+      setError(null)
+    }
+  }, [searchTerm])
+
 
 
   return (
     <>
-      <div className={styles.resultsBox}>
+      <div className={styles.totalBox}>
+        {!error && totalResults ? <p>{totalResults} books found</p> : "" }
+      </div>
+      <div className={styles.resultsBox}> 
+        {error && <p>{error}</p>}
         {books.map(book => (<Card key={book.id} book={book} />))}
       </div>
       <div className={styles.pagination}>
         {showNav && <Nav handleNextPage={handleNextClick} handlePrevPage={handlePrevClick} />}
-        <span>Page {currentPage}</span>
       </div>
+      {totalResults > 0 && !error && (
+        <p>Page {currentPage} of {Math.ceil(totalResults / 16)}</p>
+      )}
     </>
   )
 }

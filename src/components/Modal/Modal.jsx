@@ -19,9 +19,6 @@ const Modal = ({ toggle, content }) => {
   </div>
   </>
 )
-  
-    
-  
 }
 
 export default Modal
