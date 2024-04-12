@@ -4,15 +4,24 @@ import styles from './Modal.module.scss'
 const Modal = ({ toggle, content }) => {
   
   return (
-    <div className={styles.modalContainer}>
-      <div>
-        <div >{content}</div>
-        <button onClick={toggle}>
+
+    <>
+   
+      <div className={styles.modalContainer}>
+      <div className={styles.buttonBox}>
+      <button onClick={toggle}>
           Close
         </button>
       </div>
-    </div>
-  )
+      
+      <div >{content}</div>
+      
+  </div>
+  </>
+)
+  
+    
+  
 }
 
 export default Modal

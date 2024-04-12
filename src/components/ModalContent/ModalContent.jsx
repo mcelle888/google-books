@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styles from './ModalContent.module.scss'
-import { getBookById } from "../../services/google-books-service" // Import your API function
+import { getBookById } from "../../services/google-books-service" 
 
 const ModalContent = ({ bookInfo }) => {
   const [bookDetails, setBookDetails] = useState(null)
