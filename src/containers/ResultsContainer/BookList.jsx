@@ -68,23 +68,22 @@ const BookList = () => {
     }
   }, [searchTerm])
 
-
-
   return (
     <>
       <div className={styles.totalBox}>
-        {!error && totalResults ? <p>{totalResults} books found</p> : "" }
+        {!error && totalResults ? <p className={styles.total}>{totalResults} books found</p> : "" }
+        {error && <p className={styles.error}>{error}</p>}
       </div>
       <div className={styles.resultsBox}> 
-        {error && <p>{error}</p>}
         {books.map(book => (<Card key={book.id} book={book} />))}
       </div>
       <div className={styles.pagination}>
         {showNav && <Nav handleNextPage={handleNextClick} handlePrevPage={handlePrevClick} />}
-      </div>
-      {totalResults > 0 && !error && (
-        <p>Page {currentPage} of {Math.ceil(totalResults / 16)}</p>
+        {totalResults > 0 && !error && (
+        <p className={styles.pages}>Page {currentPage} of {Math.ceil(totalResults / 16)}</p>
       )}
+      </div>
+      
     </>
   )
 }

@@ -13,5 +13,33 @@
     background-color: rgba(22, 22, 22, 0.8);
     width: 100%;
     padding: 0 2rem;
+    display: flex;
+    justify-content: center;
+
+    .total {
+        font-size: larger;
+        background-color: rgba(32, 58, 40, 0.8);
+        padding: 0.7rem;
+        border-radius: 4px;
+        outline: 1px solid white;
+        
+    }
+}
+
+.pagination {
+    background-color: rgba(22, 22, 22, 0.8);
+    padding: 0 1rem 1rem 1rem;
+}
+
+.pages {
     text-align: center;
+    font-size: larger;
+}
+
+.error {
+    background-color: rgba(88, 35, 35, 0.8);
+    text-align: center;
+    padding: 2rem;
+    border-radius: 4px;
+    outline: 1px solid white;
 }

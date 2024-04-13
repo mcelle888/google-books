@@ -13,7 +13,6 @@ const Modal = ({ toggle, content }) => {
           Close
         </button>
       </div>
-      
       <div >{content}</div>
       
   </div>
